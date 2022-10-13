@@ -1,6 +1,6 @@
 package banco;
 
-public class Endereço {
+public class Endereco {
     private String logradouro;
     private String bairro;
     private String cidade;

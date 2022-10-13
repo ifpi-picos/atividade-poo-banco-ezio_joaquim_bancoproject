@@ -6,11 +6,12 @@ public class Cliente {
     private String nome;
     private String cpf;
     private LocalDate dataNascimento;
-
-    public Cliente(String nome, String cpf, LocalDate dn){
+    private Endereco end = new Endereco();
+    public Cliente(String nome, String cpf, LocalDate dn, Endereco end){
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dn;
+        this.end = end;
     }
 
 

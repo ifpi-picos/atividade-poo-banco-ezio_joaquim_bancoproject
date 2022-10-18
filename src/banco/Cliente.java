@@ -1,17 +1,19 @@
 package banco;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Cliente {
     private String nome;
     private String cpf;
     private LocalDate dataNascimento;
-    private Endereco end = new Endereco();
-    public Cliente(String nome, String cpf, LocalDate dn, Endereco end){
+    private Endereco endereco; 
+    
+    public Cliente(String nome, String cpf, LocalDate dataNascimento, Endereco endereco){
         this.nome = nome;
         this.cpf = cpf;
-        this.dataNascimento = dn;
-        this.end = end;
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco; 
     }
 
 

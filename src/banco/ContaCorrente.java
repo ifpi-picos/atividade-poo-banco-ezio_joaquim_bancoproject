@@ -2,8 +2,8 @@ package banco;
 
 public class ContaCorrente extends Conta{
     private double cheque;
-    public ContaCorrente(double saldo,int agencia, int numero, Cliente cliente, double cheque, Notificacao notificacao) {
-        super(agencia, numero, cliente, notificacao, saldo);
+    public ContaCorrente(double saldo,int agencia, int numeroC, Cliente cliente, double cheque, Notificacao notificacao) {
+        super(agencia, numeroC, saldo, cliente, notificacao);
         this.cheque = cheque;
     }
     public double getCheque() {
@@ -15,7 +15,7 @@ public class ContaCorrente extends Conta{
     }
     public String toString() {
         return    this.getAgencia()+ ", "
-                + this.getNumero()+ ", "
+                + this.getNumeroC()+ ", "
                 + this.getSaldo()+ ", "
                 + this.getCliente()+ ", "
                 + this.getNotificacao()+ ", "

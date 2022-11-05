@@ -3,8 +3,8 @@ package banco;
 public class ContaPoupanca extends Conta{
 
     private double rendimento;
-    public ContaPoupanca(int agencia, int numero, Cliente cliente, double rendimento, Notificacao notificacao) {
-        super(agencia, numero, cliente, notificacao);
+    public ContaPoupanca(int agencia, int numeroC, Cliente cliente, double rendimento,double saldo, Notificacao notificacao) {
+        super(agencia, numeroC, saldo, cliente, notificacao);
         
     }
     public double getRendimento() {
@@ -15,7 +15,7 @@ public class ContaPoupanca extends Conta{
     }
     public String toString() {
         return "[" + this.getAgencia() + ", " 
-                   + this.getNumero() + ", "
+                   + this.getNumeroC() + ", "
                    + this.getSaldo() + ", "
                    + this.getCliente() + ", "
                    + this.getNotificacao() + ", "

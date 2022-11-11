@@ -13,13 +13,5 @@ public class ContaPoupanca extends Conta{
     public double setRendimento(double rendimento) {
         return this.rendimento = rendimento;
     }
-    public String toString() {
-        return "[" + this.getAgencia() + ", " 
-                   + this.getNumeroC() + ", "
-                   + this.getSaldo() + ", "
-                   + this.getCliente() + ", "
-                   + this.getNotificacao() + ", "
-                   + this.getRendimento() + "]";
-    }
     
 }

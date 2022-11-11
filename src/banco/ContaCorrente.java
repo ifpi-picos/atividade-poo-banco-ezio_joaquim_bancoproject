@@ -13,12 +13,5 @@ public class ContaCorrente extends Conta{
     public double setCheque(double cheque) {
         return this.cheque -= cheque; 
     }
-    public String toString() {
-        return    this.getAgencia()+ ", "
-                + this.getNumeroC()+ ", "
-                + this.getSaldo()+ ", "
-                + this.getCliente()+ ", "
-                + this.getNotificacao()+ ", "
-                + this.getCheque();
-    }
+
 }

@@ -10,7 +10,7 @@ public class Conta {
     public Conta(int agencia, int numeroC, double saldo, Cliente cliente, Notificacao notificacao) {
         this.agencia = agencia;
         this.numeroC = numeroC;
-        this.saldo = 0;
+        this.saldo = saldo;
         this.cliente = cliente;
         this.notificacao = notificacao;
     }
@@ -31,26 +31,36 @@ public class Conta {
         return saldo;
     }
 
-    public boolean depositar(double saldo) {
-        this.saldo += saldo;
-        return true;
+    public double depositar(double valor) {
+        this.saldo = saldo + valor;
+        return saldo;
     }
 
     public Notificacao getNotificacao() {
         return this.notificacao;
     }
+    
+    public void setNotificacao(Notificacao notificacao) {
+		this.notificacao = notificacao;
+	}
 
-    public double sacar(double saldo) {
-        this.saldo -= saldo;
+    public double sacar(double valor) {
+        if (valor < saldo) {
+        this.saldo = saldo - valor;
+        enviaNotificacao("Saque efetuado no valor de: ", valor);
+        } else {
+            System.out.println("Valor de saque excede seu saldo!");
+        }
         return saldo;
     }
 
-    public void transferir(double saldo, Conta destinatario) {
-        this.saldo -= saldo;
-        destinatario.saldo += saldo;
+    public void transferir(Double valor, Conta destinatario) {
+        this.sacar(valor);
+        destinatario.depositar(valor);
+        enviaNotificacao("Deposito efetuado: ", valor);
     }
 
-    public void enviarNotificacao(String operacao, double valor) {
+    public void enviaNotificacao(String operacao, Double valor) {
         this.notificacao.enviaNotificacao(operacao, valor);
     }
 }
